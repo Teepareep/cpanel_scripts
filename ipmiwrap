@@ -1,0 +1,11 @@
+#!/bin/bash
+# Simple bash script for interacting with IPMI quickly via CLI
+
+IP="$1"
+CMD0="$2"
+CMD1="$3"
+CMD2="$4"
+CMD3="$5"
+USERNAME="ADMIN"
+PASSWORD="INSERTCURRENTIPMIPASSWORDHERE"
+/usr/bin/ipmitool -I lanplus -H $IP -U $USERNAME -P $PASSWORD $CMD0 $CMD1 $CMD2 $CMD3
