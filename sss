@@ -1,0 +1,8 @@
+##Note: This script requires `yum install -y sshpass`
+case $# in
+  1) ssh -o StrictHostKeyChecking=no $1 -l root ;;
+  2) sshpass -p $1 ssh -o StrictHostKeyChecking=no $2 -l root ;;
+  3) sshpass -p $1 ssh -o StrictHostKeyChecking=no $2 -p $3 ;;
+  4) sshpass -p $1 ssh -o StrictHostKeyChecking=no $2 -p $3 -l $4 ;;
+  *) echo 'Usage: '$0' [password] hostname [port] [username]' ;;
+esac
