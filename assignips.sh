@@ -1,7 +1,8 @@
 #!/bin/bash
-# shell script to help assign accounts to the proper IP addresses.
+# shell script to help assign accounts to the main shared IP address
 # written by Nick Teeple
 # version .01
+#
 
 for i in $(/scripts/ipusage | awk '{print$1}' | sed '1,2d')
 do
